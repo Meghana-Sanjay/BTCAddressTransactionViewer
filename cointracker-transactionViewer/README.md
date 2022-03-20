@@ -4,8 +4,10 @@
 
 <p> Project is a Python Flask application with a SQLite database </p>
 <p> Developed on PyCharm (mac)- https://www.jetbrains.com/pycharm/download/ </p>
+<p> Developed using Python version 3.9
 <ul>
     <li>Install pycharm from the link provided above</li>
+    <li>Install additional python libraries that you may be missing using either pip or brew
     <li>Import the project in to a PyCharm workspace</li>
     <li>Install dependencies as required. Project should already have them built in.</li>
     <li>Execute the 'app.py' file and the server will be available at the address shown in the terminal</li>
