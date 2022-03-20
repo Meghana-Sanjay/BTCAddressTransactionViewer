@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+            <style>
+            .styled-table {
+                    border-collapse: collapse;
+                    margin: 25px 0;
+                    font-size: 0.9em;
+                    font-family: sans-serif;
+                    min-width: 400px;
+                    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+                }
+            .styled-table thead tr {
+                    background-color: #009879;
+                    color: #ffffff;
+                    text-align: left;
+                }
+
+            .styled-table th,
+                .styled-table td {
+                    padding: 12px 15px;
+                }
+
+            form, h2, h3, div {
+                    margin-bottom: 50px;
+                  }
+
+            </style>
+            <form action="" method="post" >
+                Enter Address: <input type="text" name="Address">
+                <input type="submit" name="submit_button" value="ViewAddressTransactions">
+            </form>
+            <div id="addressList">
+                {% if listOfAddresses %}
+                    <h2> List of addresses for {{userID}} are</h2>
+                        {% for address in listOfAddresses %}
+                            <li>{{address}}</li>
+                        {% endfor %}
+                {% endif %}
+            </div>
+            <div>
+            {% if objects %}
+             <h2>List of transactions for address: {{address}} are as follows</h2>
+                <h3>Final Balance is : ${{finalBalance}}</h3>
+              <table id='result' class='styled-table'>
+                <thead>
+                  <tr>
+                  {% for header in headers %}
+                    <th>{{header}}</th>
+                  {% endfor %}
+                  </tr>
+                </thead>
+
+                <tbody>
+                {% for object in objects %}
+                  <tr>
+                {% for k, val in object.items() %}
+                    <td>{{val}}</td>
+                  {% endfor %}
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+            {% endif %}
+            </div>
+</html>
